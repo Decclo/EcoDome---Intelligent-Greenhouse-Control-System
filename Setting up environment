@@ -1,0 +1,10 @@
+
+How to prepare the Raspberry Pi 3 for EcoSoft
+
+1. Downlaod and flash armbian to the raspberry pi : https://www.raspberrypi.org/downloads/raspbian/
+
+2. Update the system and isntall libconfig:
+    $ sudo apt-get update && sudo apt-get upgrade
+    $ sudo apt-get install pkg-config libconfig-dev libconfig++-dev
+
+3. If necessary install wiringpi

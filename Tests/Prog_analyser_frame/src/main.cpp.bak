@@ -1,0 +1,34 @@
+// Standard Libraries
+#include <unistd.h>
+#include <iostream>
+#include <stdio.h>
+
+// Threading
+#include <pthread.h>
+
+// Custom Libraries
+#include "../include/fileman.h"
+
+// Define namespaces
+using namespace std;
+
+
+// Main
+int main(void)
+{
+    vector< vector<float> > _myfloatdata;
+
+    FILESYNC myfile("./data/", "wData");
+    myfile.update();
+    _myfloatdata = myfile.get_data_float();
+    for(int i=0; i<_myfloatdata.size(); ++i)
+		{
+			cout << "\nDataset " << i << endl;
+			for(int k=0; k<_myfloatdata[i].size(); ++k)
+            {
+                cout << "\t" << _myfloatdata[i][k] << "\n";
+            }
+		}
+
+    return 0;
+}
